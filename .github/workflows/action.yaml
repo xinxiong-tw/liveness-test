@@ -10,6 +10,10 @@ jobs:
     needs: checkout
     runs-on: self-hosted
     steps:
+      - uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
       - run: ./gradlew clean build
   image:
     needs: build
