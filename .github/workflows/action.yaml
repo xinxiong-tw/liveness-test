@@ -48,4 +48,4 @@ jobs:
     needs: image
     runs-on: self-hosted
     steps:
-      - run: helm install . --generate-name --set image.tag=${{ needs.image.outputs.tag }}
+      - run: helm install http-liveness-chart --generate-name --set image.tag=${{ needs.image.outputs.tag }}
