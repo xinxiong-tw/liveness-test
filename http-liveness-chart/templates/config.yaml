@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: http-liveness-config
+  name: {{ include "http-liveness-chart.fullname" . }}
 data:
   application.yaml: |
     color: red
