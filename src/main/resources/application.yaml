@@ -4,4 +4,4 @@ management:
       exposure:
         include: "*"
 
-deadTime: 30000000
+deadTime: 30000001
