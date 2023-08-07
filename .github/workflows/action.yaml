@@ -42,3 +42,10 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+    outputs:
+      tag: ${{ steps.meta.outputs.version }}
+  deploy:
+    needs: image
+    runs-on: self-hosted
+    steps:
+      - run: helm install . --generate-name --set image.tag=${{ needs.image.outputs.tag }}
